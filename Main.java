@@ -2,13 +2,18 @@ public class Main {
     public static void main(String[] args) {
         int[] numbers = {5,3,6,4,7,1,9,8,2};
 
-//        int[] odds = removeEvenIntegers(numbers);
-//        for (int i = 0; i<odds.length; i++){
-//            System.out.println(odds[i]);
-//        }
+        int[] odds = removeEvenIntegers(numbers);
+        for (int i = 0; i<odds.length; i++){
+            System.out.println(odds[i]);
+        }
 
         int[] reversed = reverseArray(numbers);
         for (int i = 0; i<reversed.length; i++){
+            System.out.println(reversed[i]);
+        }
+
+        int[] reversed2 = reverseArray2(numbers);
+        for (int i = 0; i<reversed2.length; i++){
             System.out.println(reversed[i]);
         }
 
@@ -41,6 +46,21 @@ public class Main {
             int temp = array[i];
             array[i] = array[array.length -i- 1];
             array[array.length -i- 1] = temp;
+        }
+        return array;
+    }
+
+
+
+    public static int[] reverseArray2(int[] array){
+        int start = 0;
+        int end = array.length - 1;
+        while (start < end){
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
         }
         return array;
     }
