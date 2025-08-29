@@ -41,6 +41,17 @@ public class SinglyLinkedList {
         head = newListNode;
     }
 
+    public void insertNodeAtTheEnd(int data){
+        ListNode current = head;
+        ListNode newNode = new ListNode(data);
+        while (current.next != null){
+            current = current.next;
+        }
+        newNode.next = null;
+        current.next = newNode;
+
+    }
+
 
 
     public static void main(String[] args) {
@@ -61,6 +72,12 @@ public class SinglyLinkedList {
         sll.display();
 
         System.out.println("Size of linked list: "+sll.lengthOfLinkedList());
+
+
+
+        sll.insertNodeAtTheEnd(30);
+        sll.display();
+
 
     }
 
