@@ -22,6 +22,19 @@ public class SinglyLinkedList {
         System.out.println("null");
     }
 
+    public int lengthOfLinkedList(){
+        if (head == null){
+            return 0;
+        }
+        int count = 0;
+        ListNode current = head;
+        while (current != null){
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
 
 
     public static void main(String[] args) {
@@ -40,6 +53,7 @@ public class SinglyLinkedList {
 
         sll.display();
 
+        System.out.println("Size of linked list: "+sll.lengthOfLinkedList());
 
     }
 
