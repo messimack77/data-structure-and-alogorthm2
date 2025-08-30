@@ -44,6 +44,11 @@ public class SinglyLinkedList {
     public void insertNodeAtTheEnd(int data){
         ListNode current = head;
         ListNode newNode = new ListNode(data);
+
+        if (head == null){
+            head = newNode;
+            return;
+        }
         while (current.next != null){
             current = current.next;
         }
