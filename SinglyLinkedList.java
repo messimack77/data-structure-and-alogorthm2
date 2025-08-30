@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class SinglyLinkedList {
 
     private ListNode head;
@@ -57,6 +59,24 @@ public class SinglyLinkedList {
 
     }
 
+    public void insertNodeInGivenPosition(int data, int position){
+        ListNode listNode = new ListNode(data);
+        int count = 1;
+
+        if (position == 1){   // if position is 1, no need to traverse, we just insert the node in the beginning
+            listNode.next =head;
+            head = listNode;
+        } else {
+        ListNode current = head;
+        while (count < position-1){
+            current = current.next;
+            count++;
+        }
+        listNode.next = current.next;
+        current.next = listNode;
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -83,6 +103,8 @@ public class SinglyLinkedList {
         sll.insertNodeAtTheEnd(30);
         sll.display();
 
+        sll.insertNodeInGivenPosition(9, 2);
+        sll.display();
 
     }
 
