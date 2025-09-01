@@ -77,6 +77,13 @@ public class SinglyLinkedList {
         }
     }
 
+    // head->1-> 2-> 3 -> null
+    public void deleteTheFirstNode(){
+        if (head == null){
+            return;
+        }
+        head = head.next;
+    }
 
 
     public static void main(String[] args) {
@@ -93,19 +100,22 @@ public class SinglyLinkedList {
         third.next = fourth;
         fourth.next = fifth;
 
-        sll.insertNodeInTheBeginning(16);
-        sll.display();
-
-        System.out.println("Size of linked list: "+sll.lengthOfLinkedList());
-
-
-
-        sll.insertNodeAtTheEnd(30);
-        sll.display();
+//        sll.insertNodeInTheBeginning(16);
+//        sll.display();
+//
+//        System.out.println("Size of linked list: "+sll.lengthOfLinkedList());
+//
+//
+//
+//        sll.insertNodeAtTheEnd(30);
+//        sll.display();
 
         sll.insertNodeInGivenPosition(9, 2);
         sll.display();
 
+        System.out.println("----------");
+        sll.deleteTheFirstNode();
+        sll.display();
     }
 
 }
