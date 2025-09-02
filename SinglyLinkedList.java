@@ -86,6 +86,22 @@ public class SinglyLinkedList {
     }
 
 
+
+    public void deleteMiddleNode() {
+        ListNode fastPointer = head;
+        ListNode slowPointer = head;
+        ListNode previousNode = head;
+
+        while (fastPointer.next != null){
+            fastPointer = fastPointer.next.next;
+            previousNode = slowPointer;
+            slowPointer = slowPointer.next;
+        }
+
+
+        previousNode.next = slowPointer.next;
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
 
@@ -110,11 +126,16 @@ public class SinglyLinkedList {
 //        sll.insertNodeAtTheEnd(30);
 //        sll.display();
 
-        sll.insertNodeInGivenPosition(9, 2);
+//        sll.insertNodeInGivenPosition(9, 2);
+//        sll.display();
+
+//        sll.deleteTheFirstNode();
         sll.display();
+//
+
 
         System.out.println("----------");
-        sll.deleteTheFirstNode();
+        sll.deleteMiddleNode();
         sll.display();
     }
 
