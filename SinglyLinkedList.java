@@ -113,6 +113,28 @@ public class SinglyLinkedList {
         }
         previous.next = null;
     }
+
+    //position = 3
+    // 1-> 2-> 3-> 4-> 5-> null
+
+    public void deleteNodeAtTheGivenPosition(int position){
+        if (position == 1){
+            head = head.next;
+        }
+        ListNode current = head;
+        ListNode previous = head;
+        int count = 1;
+
+        while (count < position ){
+            previous = current;
+            current = current.next;
+            count++;
+        }
+
+        previous.next = current.next;
+    }
+
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
 
@@ -152,6 +174,11 @@ public class SinglyLinkedList {
         System.out.println("*******");
         sll.deleteTheEndBode();
 
+        sll.display();
+
+        System.out.println("delete from 3");
+
+        sll.deleteNodeAtTheGivenPosition(3);
         sll.display();
     }
 
