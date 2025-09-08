@@ -134,6 +134,49 @@ public class SinglyLinkedList {
         previous.next = current.next;
     }
 
+//    1,2,6,3,4,5,6
+
+
+    public ListNode removeElements(ListNode head, int val) {
+
+        while (head != null && head.data == val){
+            head = head.next;
+        }
+
+        if (head == null){
+            return head;
+        }
+        ListNode current = head;
+        ListNode previous = head;
+
+        if (current.data == val){
+            current = current.next;
+            head = current;
+            return head;
+        }
+        while (current != null){
+            if (current.data == val){
+                previous.next = current.next;
+            }
+            previous = current;
+            current = current.next;
+        }
+
+        return head;
+    }
+
+
+    public boolean checkIfTheElementExists(int data){
+        ListNode current = head;
+        while (current != null){
+            if (current.data == data){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
@@ -180,6 +223,17 @@ public class SinglyLinkedList {
 
         sll.deleteNodeAtTheGivenPosition(3);
         sll.display();
+
+
+        System.out.println("000000000000000000");
+        sll.removeElements(sll.head, 10);
+        sll.display();
+
+
+        System.out.println(sll.checkIfTheElementExists(10));
+
+
+
     }
 
 }
