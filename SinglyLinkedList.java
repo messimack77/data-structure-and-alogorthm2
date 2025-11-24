@@ -60,30 +60,44 @@ public class SinglyLinkedList {
 
 
     public static void main(String[] args) {
-        SinglyLinkedList sll = new SinglyLinkedList();
+//        SinglyLinkedList sll = new SinglyLinkedList();
+//
+//        sll.head = new ListNode(10);
+//        ListNode second = new ListNode(8);
+//        ListNode third = new ListNode(6);
+//        ListNode fourth = new ListNode(4);
+//        ListNode fifth = new ListNode(2);
+//
+//        sll.head.next = second;
+//        second.next = third;
+//        third.next = fourth;
+//        fourth.next = fifth;
+//
+//        sll.insertNodeInTheBeginning(16);
+//        sll.display();
+//
+//        System.out.println("Size of linked list: "+sll.lengthOfLinkedList());
+//
+//
+//
+//        sll.insertNodeAtTheEnd(30);
+//        sll.display();
 
-        sll.head = new ListNode(10);
-        ListNode second = new ListNode(8);
-        ListNode third = new ListNode(6);
-        ListNode fourth = new ListNode(4);
-        ListNode fifth = new ListNode(2);
-
-        sll.head.next = second;
-        second.next = third;
-        third.next = fourth;
-        fourth.next = fifth;
-
-        sll.insertNodeInTheBeginning(16);
-        sll.display();
-
-        System.out.println("Size of linked list: "+sll.lengthOfLinkedList());
+        int[] nums = {1,2,3,1,2,3};
+        System.out.println(checkForNearbyDuplicates(nums,3 ));
 
 
+    }
 
-        sll.insertNodeAtTheEnd(30);
-        sll.display();
-
-
+    public static boolean checkForNearbyDuplicates(int[] array, int k){
+        for (int i = 0; i<array.length; i++){
+            for (int j = i+1; j <= k+i && j < array.length; j++){
+                if (array[i] == array[j]){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }
