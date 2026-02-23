@@ -95,6 +95,22 @@ public class SinglyLinkedList {
         current.next = null;
     }
 
+     //1,2,3,4,5,6
+    public static void deleteTheNthNode(ListNode head, int n){
+        ListNode current = head;
+        ListNode previous = null;
+        int count = 1;
+
+        while (count < n){
+            previous = current;
+            current = current.next;
+            count++;
+        }
+        previous.next = current.next;
+
+
+    }
+
 
 
 
@@ -118,9 +134,11 @@ public class SinglyLinkedList {
         sll.insertNodeInTheBeginning(16);
         sll.display();
 
-        System.out.println("Delete from the end");
+//        System.out.println("Delete from the end");
+//
+//        deleteTheLastNode(sll.head);
 
-        deleteTheLastNode(sll.head);
+            deleteTheNthNode(sll.head, 3);
 
 
 
